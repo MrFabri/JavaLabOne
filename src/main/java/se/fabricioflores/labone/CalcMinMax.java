@@ -24,12 +24,11 @@ public class CalcMinMax {
         for (int price : prices) {
             total += price;
 
-            if (price > maxPrice) {
-                minPrice = price;
-            }
-
             if (price < minPrice) {
                 minPrice = price;
+            }
+            if (price > maxPrice) {
+                maxPrice = price;
             }
         }
 
