@@ -19,11 +19,11 @@ public class Input {
             String interval;
 
             if (String.valueOf(nextHour).length() == 1) {
-                interval = String.format("0%s - 0%s", hour, nextHour);
+                interval = String.format("0%s-0%s", hour, nextHour);
             } else if (String.valueOf(hour).length() == 1 && String.valueOf(nextHour).length() == 2) {
-                interval = String.format("0%s - %s", hour, nextHour);
+                interval = String.format("0%s-%s", hour, nextHour);
             } else {
-                interval = String.format("%s - %s", hour, nextHour);
+                interval = String.format("%s-%s", hour, nextHour);
             }
 
             System.out.printf("🪫 Ange elpris för timme %s (i öre per kWh): ", interval);

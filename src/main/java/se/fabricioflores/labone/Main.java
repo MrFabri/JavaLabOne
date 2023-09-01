@@ -20,6 +20,7 @@ public class Main {
                 case "e" -> stop();
                 case "1" -> Input.init(scanner, prices);
                 case "2" -> CalcMinMax.init(prices);
+                case "3" -> Sort.init(prices);
                 default -> System.out.println("❌ Ogiltigt val. Försök igen!\n");
             }
 
