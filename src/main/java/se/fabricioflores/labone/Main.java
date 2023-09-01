@@ -8,8 +8,7 @@ public class Main {
     private static final Scanner scanner = new Scanner(System.in);
     private static boolean status = true;
     private static void toggle() { status = !status; }
-    private static final List<Integer> prices = new ArrayList<>();
-
+    private static final List<Price> prices = new ArrayList<Price>();
 
     public static void main(String[] args) {
         while (status) {

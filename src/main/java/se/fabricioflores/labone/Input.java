@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Input {
-    public static void init(Scanner scanner, List<Integer> prices) {
+    public static void init(Scanner scanner, List<Price> pricesList) {
         System.out.println(
                 """
                 📄 Inmatning
@@ -33,7 +33,7 @@ public class Input {
             while (!isValid) {
                 try {
                     int price = scanner.nextInt();
-                    prices.add(price);
+                    pricesList.add(new Price(price, interval));
                     isValid = true;
                 } catch (InputMismatchException e) {
                     System.out.print("❌ Error: Ogiltigt inmatning, försök igen: ");
@@ -41,8 +41,6 @@ public class Input {
                 }
             }
         }
-
-        System.out.println("\n👉 El priser: " + prices + "\n");
     }
 
 }
