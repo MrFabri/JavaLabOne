@@ -1,5 +1,6 @@
 package se.fabricioflores.labone;
 
+import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
@@ -12,6 +13,10 @@ public class Input {
                 =============
                 """
         );
+
+        if(!pricesList.isEmpty()) {
+            pricesList.clear();
+        }
 
         for (int hour = 0; hour < 24; hour++) {
 
