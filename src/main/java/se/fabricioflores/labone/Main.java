@@ -21,6 +21,7 @@ public class Main {
                 case "1" -> Input.init(scanner, prices);
                 case "2" -> CalcMinMax.init(prices);
                 case "3" -> Sort.init(prices);
+                case "4" -> BestChargingTime.init(prices);
                 default -> System.out.println("❌ Ogiltigt val. Försök igen!\n");
             }
 

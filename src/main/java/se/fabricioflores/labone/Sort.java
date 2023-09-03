@@ -1,5 +1,6 @@
 package se.fabricioflores.labone;
 
+import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 
@@ -16,10 +17,12 @@ public class Sort {
             System.out.println("❌ Inga elpriser har lagts till ännu.\n");
             return;
         }
+        
+        List<Price> sortedPriceList = new ArrayList<>(priceList);
 
-        priceList.sort(Comparator.comparingInt(Price::getPrice));
+        sortedPriceList.sort(Comparator.comparingInt(Price::getPrice));
 
-        for (Price price : priceList) {
+        for (Price price : sortedPriceList) {
             System.out.println("⚡ " + price.getInterval() + " " + price.getPrice() + " öre");
         }
     }
