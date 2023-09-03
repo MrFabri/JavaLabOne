@@ -35,8 +35,8 @@ public class CalcMinMax {
 
         double averagePrice = (double) total / 24;
 
-        System.out.println("👉 Genomsnittspriset för dygnet är: " + averagePrice + " öre per kWh");
-        System.out.println("📈 Högsta priset under dygnet är mellan " + maxPriceItem.getInterval() + " med " + maxPriceItem.getPrice() + " öre per kWh");
-        System.out.println("📉 Lägsta priset under dygnet är mellan " + minPriceItem.getInterval() + " med " + minPriceItem.getPrice() + " öre per kWh\n");
+        System.out.println("👉 Genomsnittspriset för dygnet är: " + averagePrice + " öre.");
+        System.out.println("📈 Högsta priset under dygnet är mellan " + maxPriceItem.getInterval() + " med " + maxPriceItem.getPrice() + " öre.");
+        System.out.println("📉 Lägsta priset under dygnet är mellan " + minPriceItem.getInterval() + " med " + minPriceItem.getPrice() + " öre.\n");
     }
 }

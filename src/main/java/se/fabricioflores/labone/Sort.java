@@ -23,7 +23,7 @@ public class Sort {
         sortedPriceList.sort(Comparator.comparingInt(Price::getPrice));
 
         for (Price price : sortedPriceList) {
-            System.out.println("⚡ " + price.getInterval() + " " + price.getPrice() + " öre");
+            System.out.println("⚡ " + price.getInterval() + " -> " + price.getPrice() + " öre");
         }
     }
 }
