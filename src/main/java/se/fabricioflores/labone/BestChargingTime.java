@@ -3,7 +3,7 @@ package se.fabricioflores.labone;
 import java.util.List;
 
 public class BestChargingTime {
-    public static void init(List<Price> priceList) {
+    public static void run(List<Price> priceList) {
         System.out.println(
                 """
                 🔋 Bästa Laddningstid (4h)

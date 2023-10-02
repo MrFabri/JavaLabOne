@@ -1,12 +1,11 @@
 package se.fabricioflores.labone;
 
-import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
 
 public class Input {
-    public static void init(Scanner scanner, List<Price> pricesList) {
+    public static void run(Scanner scanner, List<Price> pricesList) {
         System.out.println(
                 """
                 📄 Inmatning

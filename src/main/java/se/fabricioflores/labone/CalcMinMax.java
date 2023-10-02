@@ -3,7 +3,7 @@ package se.fabricioflores.labone;
 import java.util.List;
 
 public class CalcMinMax {
-    public static void init(List<Price> priceList) {
+    public static void run(List<Price> priceList) {
         System.out.println(
                 """
                 📊 Min, Max och Medel

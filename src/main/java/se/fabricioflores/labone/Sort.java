@@ -5,7 +5,7 @@ import java.util.Comparator;
 import java.util.List;
 
 public class Sort {
-    public static void init(List<Price> priceList) {
+    public static void run(List<Price> priceList) {
         System.out.println(
                 """
                 🔎 Sortering
