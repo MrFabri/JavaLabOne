@@ -17,24 +17,33 @@ public class Input {
             pricesList.clear();
         }
 
-        for (int hour = 0; hour < 24; hour++) {
-            String interval = generateIntervalBasedOnNumber(hour);
+        String filename = "priser.csv";
+        var optionalPriceListFromFile = CSVFileReader.run(pricesList, filename);
 
-            System.out.printf("🪫 Ange elpris för timme %s (i öre per kWh): ", interval);
+        optionalPriceListFromFile.ifPresentOrElse(prices -> {
+            System.out.println("💽 Läser priserna från " + filename);
+            pricesList.addAll(prices);
+            System.out.println("✅ Priserna har lagts till.\n");
+        }, () -> {
+            for (int hour = 0; hour < 24; hour++) {
+                String interval = generateIntervalBasedOnNumber(hour);
 
-            boolean isValid = false;
+                System.out.printf("🪫 Ange elpris för timme %s (i öre per kWh): ", interval);
 
-            while (!isValid) {
-                try {
-                    int price = scanner.nextInt();
-                    pricesList.add(new Price(price, interval));
-                    isValid = true;
-                } catch (InputMismatchException e) {
-                    System.out.print("❌ Error: Ogiltigt inmatning, försök igen: ");
-                    scanner.nextLine(); // Consume the invalid input
+                boolean isValid = false;
+
+                while (!isValid) {
+                    try {
+                        int price = scanner.nextInt();
+                        pricesList.add(new Price(price, interval));
+                        isValid = true;
+                    } catch (InputMismatchException e) {
+                        System.out.print("❌ Error: Ogiltigt inmatning, försök igen: ");
+                        scanner.nextLine(); // Consume the invalid input
+                    }
                 }
             }
-        }
+        });
     }
 
     public static String generateIntervalBasedOnNumber (int num) {
