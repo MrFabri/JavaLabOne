@@ -18,17 +18,7 @@ public class Input {
         }
 
         for (int hour = 0; hour < 24; hour++) {
-
-            int nextHour = hour + 1;
-            String interval;
-
-            if (String.valueOf(nextHour).length() == 1) {
-                interval = String.format("0%s-0%s", hour, nextHour);
-            } else if (String.valueOf(hour).length() == 1 && String.valueOf(nextHour).length() == 2) {
-                interval = String.format("0%s-%s", hour, nextHour);
-            } else {
-                interval = String.format("%s-%s", hour, nextHour);
-            }
+            String interval = generateIntervalBasedOnNumber(hour);
 
             System.out.printf("🪫 Ange elpris för timme %s (i öre per kWh): ", interval);
 
@@ -45,6 +35,21 @@ public class Input {
                 }
             }
         }
+    }
+
+    public static String generateIntervalBasedOnNumber (int num) {
+        String number = String.valueOf(num);
+        String secondNumber = String.valueOf(num + 1);
+
+        if(number.length() == 1) {
+            number = "0" + number;
+        }
+
+        if(secondNumber.length() == 1) {
+            secondNumber = "0" + secondNumber;
+        }
+
+        return number + "-" + secondNumber;
     }
 
 }
